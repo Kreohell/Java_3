@@ -15,11 +15,11 @@ public class HomeWork {
         file.createNewFile();
     }
 
-    private static String makeDir(String name){
+    private static String makeDir(String name){ //указываем путь к файлу
         return "C:/Java/Java_Three/src/main/java/ru/geekbrains/lessons/lesson_c/" + name;
     }
 
-    private static StringBuilder text(String text, int words_amount){
+    private static StringBuilder text(String text, int words_amount){ //генерируем текст
         StringBuilder stringText = new StringBuilder();
         for (int i = 0; i < words_amount; i++) {
             stringText.append(text).append("\n");
@@ -27,7 +27,7 @@ public class HomeWork {
         return stringText;
     }
 
-    private static void addText(String name, String text, int words_amount)throws FileNotFoundException {
+    private static void addText(String name, String text, int words_amount)throws FileNotFoundException { //добавляем текст в файл
         PrintStream file = new PrintStream(new FileOutputStream(makeDir(name), true));
         file.println(text(text, words_amount));
         file.close();
